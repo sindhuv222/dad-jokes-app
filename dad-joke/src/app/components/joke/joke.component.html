@@ -1,0 +1,21 @@
+<!-- The search box section -->
+<div class="search-box">
+  <input type="text" [formControl]="searchTermControl" id="searchInput" placeholder="Search for jokes">
+  <button type="button" (click)="onSearch()" [disabled]="searchForm.invalid">Search</button>
+</div>
+<!-- Error message section -->
+<div *ngIf="searchForm.get('searchTerm')?.invalid && searchForm.get('searchTerm')?.dirty" class="error-message">
+  Search term should contain alphabets only.
+</div>
+<!-- Search result message section -->
+<div *ngIf="searchResultMessage" class="search-result-message">
+  {{ searchResultMessage }}
+</div>
+
+<!-- Displays the list of jokes in a table format -->
+<app-joke-table [jokes]="jokes"></app-joke-table>
+
+<!-- Displays pagination buttons for navigating through joke pages -->
+<app-joke-pagination [currentPage]="currentPage" [totalPages]="totalPages" [totalJokes]="totalJokes"
+  [pageSize]="pageSize" (pageChange)="onPageChange($event)" [showEntries]="jokes.length > 0">
+</app-joke-pagination>

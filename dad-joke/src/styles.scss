@@ -1,0 +1,186 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0px;
+    font-family: BlinkMacSystemFont, -apple-system, segoe ui, roboto, oxygen, ubuntu, cantarell, fira sans, droid sans, helvetica neue, helvetica, arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    /* Set a maximum width for the container */
+    margin: 2px auto 0;
+    /* Center the container horizontally */
+    padding: 20px;
+    /* Add some padding around the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Add a box shadow for a subtle effect */
+    background-color: #f8f8f8;
+    /* Set the background color for the container */
+}
+
+/* header styles */
+.navbar {
+    background-color: #fff;
+    color: #4a4a4a;
+    padding: 1rem;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Search-box styles */
+.search-box {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-box input {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+    flex: 1;
+    max-width: 300px;
+    margin-right: 0px;
+}
+
+.search-box button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #007ad9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-result-message {
+    font-size: 14px;
+    margin: 20px 5px 0;
+}
+
+/* Hover styles for the page buttons */
+.pagination button:hover {
+    background-color: #005FB3;
+    color: #fff;
+}
+
+/* Table styles */
+table.custom-table {
+    border-collapse: collapse;
+    font-family: monospace;
+    width: 100%;
+    // max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Pagination styles */
+.pagination-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination {
+    flex: 1;
+    text-align: left;
+}
+
+button {
+    cursor: pointer;
+    background-color: #f2f2f2;
+    border: none;
+    padding: 8px 16px;
+    margin: 0 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    outline: none;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+button:focus {
+    outline: 2px solid #007bff;
+    /* Change the color as desired */
+}
+
+.pagination button {
+    /* Your button styles here */
+    padding: 5px 10px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.pagination button.selected {
+    background-color: #EABA0B;
+}
+
+.ellipsis {
+    display: inline-block;
+    margin: 0 2px;
+    /* Adjust the margin as needed */
+}
+
+.entries-info-container {
+    flex: 0.6;
+    text-align: left;
+}
+
+.entries-info {
+    font-size: 12px;
+}
+
+/* Styles for the error message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+}

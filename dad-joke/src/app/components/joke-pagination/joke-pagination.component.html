@@ -1,0 +1,32 @@
+<!-- Pagination -->
+<div class="pagination-container" aria-label="Pagination">
+    <!-- Entries information -->
+    <div class="entries-info-container">
+        <div class="entries-info" *ngIf="showEntries">
+            Showing {{ calculateStartEntry() }} to {{ calculateEndEntry() }} of {{ totalJokes }} entries
+        </div>
+    </div>
+    <!-- Pagination buttons -->
+    <div class="pagination">
+        <!-- Previous button -->
+        <button type="button" [disabled]="currentPage === 1" (click)="pageChange.emit(currentPage - 1)">
+            <span class="visually-hidden">Previous Page</span>
+            Previous
+        </button>
+        <!-- Page number buttons -->
+        <button type="button" *ngFor="let page of generatePageNumbers()" (click)="onPageButtonClick(page)"
+            [ngClass]="{ 'selected': currentPage === page, 'ellipsis': page === -1 }">
+            <!-- Handle the ellipsis -->
+            <ng-container *ngIf="page > 0; else ellipsis">
+                <span class="visually-hidden">Page </span>{{ page }}
+            </ng-container>
+            <ng-template #ellipsis><span class="ellipsis">...</span></ng-template>
+        </button>
+        <!-- Next button -->
+        <button type="button" [disabled]="currentPage === totalPages || totalJokes === 0"
+            (click)="pageChange.emit(currentPage + 1)">
+            <span class="visually-hidden">Next Page</span>
+            Next
+        </button>
+    </div>
+</div>

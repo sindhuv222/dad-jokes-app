@@ -1,0 +1,17 @@
+<!-- Table to display jokes -->
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th scope="col">Jokes</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="jokes.length > 0; else noRecords">
+        <tr *ngFor="let joke of jokes">
+            <td>{{ joke.joke }}</td>
+        </tr>
+    </tbody>
+</table>
+<!-- If jokes array is empty, show a message -->
+<ng-template #noRecords>
+    <div class="no-records-message">No Records Found</div>
+</ng-template>
